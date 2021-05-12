@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+:root {
+	--c1: #C70039;
+	--c2: #900C3F;
+	--c3: #FF5733;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23838383' fill-opacity='0.24'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    font-family: 'Yusei Magic', sans-serif;
+    color: black;
+    font-weight: 7;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-container {
+    width: auto;
+    right: 5%;
+    max-width: 900px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2) ;
+}
+
+.quote-text {
+    font-size: 2rem;  
+}
+
+.long-quote {
+    font-size: 4rem;   
+}
+
+
+.quote-author {
+    margin-top: 15px;
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.button-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button1 {
+    cursor: pointer;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background:#557A95;
+    outline: none;
+    padding: 0.5rem 1.8rem;
+    box-shadow: 0 0.3rem rgba(121,121,121,0.65);
+}
+
+.button1:hover {
+    filter: brightness(110%);
+}
+
+.button1:active {
+    transform: translate(0 ,0.3rem);
+    box-shadow: 0 0.1rem rgba(255,255,255,0.65);
+}
+
+.twitter-button:hover {
+    color:#38a1f3;
+}
+
+.fa-twitter {
+    font-size: 1.5rem;
+}
+
+
+.loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.dot1, .dot2, .dot3 {
+	width: 3vw;
+	height: 3vw;
+	border-radius: 100%;
+	margin: 2vw;
+	background-image: linear-gradient(
+		145deg,
+		rgba(255, 255, 255, 0.5) 0%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	animation: bounce 1.5s 0.5s linear infinite;
+}
+.dot1 {
+	background-color: var(--c1);
+}
+
+.dot2 {
+	background-color: var(--c2);
+	animation-delay: 0.1s;
+}
+
+.dot3 {
+	background-color: var(--c3);
+	animation-delay: 0.2s;
+}
+
+.button3 {
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:1em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:200;
+    color:#FFFFFF;
+    background-color:#557A95;
+    text-align:center;
+    transition: all 0.2s;
+}
+.button3:hover {
+    background-color:#73a2c4;
+}
+@media all and (max-width:30em){
+.button3{
+   display:block;
+   margin:0.2em auto;
+}
+}
+
+
+@keyframes bounce {
+	0%,
+	50%,
+	100% {
+		transform: scale(1);
+		filter: blur(0px);
+	}
+	25% {
+		transform: scale(0.6);
+		filter: blur(3px);
+	}
+	75% {
+		filter: blur(3px);
+		transform: scale(1.4);
+	}
+}
+
+
+/* Media Query: Tablet or smaller*/
+
+@media screen and (max-width:1000px) {
+    .quote-container {
+        margin: auto 10px;
+    }
+
+    .quote-text {
+        font-size: 2.5rem;
+    }
+}
+
+
+.icon-bar {
+    width: 100px; 			/* Set a specific width */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2) ; /* Dark-grey background */
+}
+
+.icon-bar a {
+    display: block; 		/* Make the links appear below each other instead of side-by-side */
+    text-align: center; 	/* Center-align text */
+    padding: 20px; 			/* Add some padding */
+    transition: all 0.3s ease; /* Add transition for hover effects */
+    color: rgb(63, 60, 60); 			/* White text color */
+    font-size: 36px; 		/* Increased font-size */
+}
+
+.icon-bar a:hover {
+    background-color: #557A95;
+    border-radius: 10px;
+    color: white; /* Add a hover color */
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+
+#active {
+    background-color: #557A95;
+    border-radius: 10px;
+    color: white; /* Add an active/current color */
+}
+
+.container{
+    padding: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

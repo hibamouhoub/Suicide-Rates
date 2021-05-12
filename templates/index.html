@@ -1,47 +1,42 @@
-{% extends 'base.html' %}
-{% block title %}
-index Page
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-<div class="container">
-    <br>
-    <h1>index Page</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suicide Rates</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static',filename='logo.png') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
 
-    <div class="row">
-        <div class="col-md-4">
-    <form action="/index" method="POST" autocomplete="off">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Search here:</label>
-            <input type="text" class="form-control" id="q" name="q" placeholder="Search" value={{q}}>
+<body>
+    <div class="quote-container" id="quote-container">
+        <div class="quote-text">
+            Suicides in {{ year }}:
+            <br> {{ total }} <br>
+            <a href="{{ url_for('select') }}" class="button1">Select another year</a>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
-        
-    </form><br>
-</div>
-</div>
-    {% if response %}
-    {% set response = response.hits.hits[0]._source %}
-    <table class="table table-hover text-center">
-        <thead>
-          <tr class="table-dark">
-            <th scope="col">Year</th>
-            <th scope="col">Country</th>
-            <th scope="col">Sex</th>
-            <th scope="col">Age</th>
-            <th scope="col">Generation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">{{response.year}}</th>
-            <td>{{response.country}}</td>
-            <td>{{response.sex}}</td>
-            <td>{{response.age}}</td>
-            <td>{{response.generation}}</td>
-          </tr>
-        </tbody>
-      </table>
-    {% endif %}
-</div>
-{% endblock %}
+    </div>
+
+    <div class="container">
+		<div class="icon-bar">
+			<a id= "{{active.age}}" href="{{url_for('by_age', year=year , total=total)}}"><i class="fa fa-universal-access"></i></a> 
+			<a id="{{active.gender}}" href="{{url_for('by_gender', year=year, total=total)}}"><i class="fa fa-venus-mars"></i></a>
+			<a id= "{{active.generation}}" href="{{url_for('by_generation', year=year, total=total)}}"><i class="fa fa-user-clock"></i></a>
+			<a id="{{active.gdp}}" href="{{url_for('by_gdp_capital', year=year, total=total)}}"><i class="fa fa-dollar-sign"></i></a>
+		</div>
+	</div>
+
+    <div class="quote-container" id="quote-container">
+        <iframe src="{{plot}}" height="600" width="800"></iframe>
+    </div>
+
+    
+
+
+</body>
+
+</html>
